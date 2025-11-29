@@ -5,9 +5,13 @@ import '@/lib/env';
 
 import HeroSection from './components/sections/HeroSection';
 import FeaturesSection from './components/sections/FeaturesSection';
-
-// import PricingSection from './components/sections/PricingSection';
+import RecentResults from './components/sections/RecentResultSection';
+import PromisesSection from './components/sections/PromisesSection';
 import ContactSection from './components/sections/ContactSection';
+import ValuePropositionSection from '@/app/components/sections/ValuePropositionSection';
+import { Group } from 'lucide-react';
+import GrowthSprintsSection from '@/app/components/sections/GrowthSprintSection';
+import FinalCTABanner from '@/app/components/sections/FinalCTABanner';
 
 /**
  * SVGR Support
@@ -16,7 +20,6 @@ import ContactSection from './components/sections/ContactSection';
  * You can override the next-env if the type is important to you
 
  */
-import Logo from '~/svg/Logo.svg';
 
 // !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
 // Before you begin editing, follow all comments with `STARTERCONF`,
@@ -25,11 +28,14 @@ import Logo from '~/svg/Logo.svg';
 export default function HomePage() {
   return (
     <main>
-          <HeroSection />
-      <FeaturesSection />
-      
+      <HeroSection />
+      {/* <RecentResults/> */}
+      <PromisesSection />
+
+      <ValuePropositionSection />
+      <GrowthSprintsSection />
       {/* <PricingSection /> */}
-      <ContactSection />
+      <FinalCTABanner />
     </main>
   );
 }
