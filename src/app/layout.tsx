@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { Metadata } from 'next';
 import * as React from 'react';
 
@@ -5,6 +6,7 @@ import '@/styles/globals.css';
 import '@/styles/colors.css';
 
 import { siteConfig } from '@/constant/config';
+
 import Navbar from './components/Navbar';
 
 export const metadata: Metadata = {
@@ -44,13 +46,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+    <html lang='en'>
+      <body className='bg-gray-50 text-gray-900 min-h-screen flex flex-col'>
         {/* Navbar fixed at top */}
         <Navbar />
 
         {/* Full-width, full-height content below */}
-        <main className="flex-1 w-full">{children}</main>
+        <main className='flex-1 w-full'>{children}</main>
+        <Analytics />
       </body>
     </html>
   );
