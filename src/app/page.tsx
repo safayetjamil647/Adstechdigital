@@ -3,15 +3,12 @@
 import * as React from 'react';
 import '@/lib/env';
 
-import HeroSection from './components/sections/HeroSection';
-import FeaturesSection from './components/sections/FeaturesSection';
-import RecentResults from './components/sections/RecentResultSection';
-import PromisesSection from './components/sections/PromisesSection';
-import ContactSection from './components/sections/ContactSection';
-import ValuePropositionSection from '@/app/components/sections/ValuePropositionSection';
-import { Group } from 'lucide-react';
-import GrowthSprintsSection from '@/app/components/sections/GrowthSprintSection';
 import FinalCTABanner from '@/app/components/sections/FinalCTABanner';
+import GrowthSprintsSection from '@/app/components/sections/GrowthSprintSection';
+import ValuePropositionSection from '@/app/components/sections/ValuePropositionSection';
+
+import HeroSection from './components/sections/HeroSection';
+import PromisesSection from './components/sections/PromisesSection';
 
 /**
  * SVGR Support
