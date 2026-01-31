@@ -1,7 +1,7 @@
 'use client';
 
+import { ChartBar, Code, Gauge, Megaphone } from 'lucide-react';
 import * as React from 'react';
-import { Megaphone, Code, ChartBar, Gauge, Search, Globe } from 'lucide-react';
 
 const services = [
   {

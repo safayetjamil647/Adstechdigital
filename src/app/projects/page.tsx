@@ -1,8 +1,7 @@
 'use client';
 
+import { ExternalLink, Laptop, Rocket, Zap } from 'lucide-react';
 import * as React from 'react';
-import NextImage from '@/components/NextImage';
-import { ExternalLink, Rocket, Laptop, Zap } from 'lucide-react';
 
 const projects = [
   {
