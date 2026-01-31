@@ -1,50 +1,57 @@
-import Image from 'next/image'; // Re-import Image for the illustration
+import Image from 'next/image';
+import {
+  SiMeta,
+  SiGoogleads,
+  SiLinkedin,
+  SiShopify,
+  SiInstagram,
+} from 'react-icons/si';
 
 export default function HeroSection() {
   return (
-    <section className='relative bg-black text-white min-h-screen flex flex-col justify-between overflow-hidden'>
+    <section className='relative flex min-h-screen flex-col justify-between overflow-hidden bg-black text-white'>
       {/* Background stars (simple solution for effect) */}
       <div className='absolute inset-0 z-0 opacity-70'>
         {/* You might want a more sophisticated star background or a subtle SVG pattern */}
-        <div className='absolute top-10 left-1/4 w-0.5 h-0.5 bg-white rounded-full animate-pulse'></div>
-        <div className='absolute top-1/2 right-1/3 w-0.5 h-0.5 bg-white rounded-full animate-pulse delay-200'></div>
-        <div className='absolute bottom-1/4 left-1/3 w-1 h-1 bg-white rounded-full animate-pulse delay-400'></div>
-        <div className='absolute top-1/3 left-1/2 w-0.5 h-0.5 bg-white rounded-full animate-pulse delay-600'></div>
-        <div className='absolute bottom-1/2 right-1/4 w-1 h-1 bg-white rounded-full animate-pulse delay-800'></div>
+        <div className='absolute top-10 left-1/4 h-0.5 w-0.5 animate-pulse rounded-full bg-white'></div>
+        <div className='absolute top-1/2 right-1/3 h-0.5 w-0.5 animate-pulse rounded-full bg-white delay-200'></div>
+        <div className='absolute bottom-1/4 left-1/3 h-1 w-1 animate-pulse rounded-full bg-white delay-400'></div>
+        <div className='absolute top-1/3 left-1/2 h-0.5 w-0.5 animate-pulse rounded-full bg-white delay-600'></div>
+        <div className='absolute right-1/4 bottom-1/2 h-1 w-1 animate-pulse rounded-full bg-white delay-800'></div>
         {/* More stars for better effect */}
-        <div className='absolute top-[20%] left-[10%] w-[1px] h-[1px] bg-white rounded-full animate-pulse'></div>
-        <div className='absolute top-[35%] right-[20%] w-[1px] h-[1px] bg-white rounded-pulse delay-100'></div>
-        <div className='absolute bottom-[25%] left-[5%] w-[1.5px] h-[1.5px] bg-white rounded-full animate-pulse delay-300'></div>
-        <div className='absolute top-[5%] right-[5%] w-[0.5px] h-[0.5px] bg-white rounded-full animate-pulse delay-500'></div>
-        <div className='absolute top-[60%] left-[40%] w-[1px] h-[1px] bg-white rounded-full animate-pulse delay-700'></div>
-        <div className='absolute top-[80%] right-[30%] w-[0.5px] h-[0.5px] bg-white rounded-full animate-pulse delay-900'></div>
-        <div className='absolute top-[10%] left-[60%] w-[1px] h-[1px] bg-white rounded-full animate-pulse delay-200'></div>
-        <div className='absolute bottom-[10%] right-[10%] w-[1.5px] h-[1.5px] bg-white rounded-full animate-pulse delay-400'></div>
+        <div className='absolute top-[20%] left-[10%] h-[1px] w-[1px] animate-pulse rounded-full bg-white'></div>
+        <div className='rounded-pulse absolute top-[35%] right-[20%] h-[1px] w-[1px] bg-white delay-100'></div>
+        <div className='absolute bottom-[25%] left-[5%] h-[1.5px] w-[1.5px] animate-pulse rounded-full bg-white delay-300'></div>
+        <div className='absolute top-[5%] right-[5%] h-[0.5px] w-[0.5px] animate-pulse rounded-full bg-white delay-500'></div>
+        <div className='absolute top-[60%] left-[40%] h-[1px] w-[1px] animate-pulse rounded-full bg-white delay-700'></div>
+        <div className='absolute top-[80%] right-[30%] h-[0.5px] w-[0.5px] animate-pulse rounded-full bg-white delay-900'></div>
+        <div className='absolute top-[10%] left-[60%] h-[1px] w-[1px] animate-pulse rounded-full bg-white delay-200'></div>
+        <div className='absolute right-[10%] bottom-[10%] h-[1.5px] w-[1.5px] animate-pulse rounded-full bg-white delay-400'></div>
       </div>
 
-      <div className='relative z-10 flex flex-col md:flex-row items-center justify-center pt-20 pb-12 px-6 md:px-20 lg:px-28 xl:px-36 flex-grow'>
+      <div className='relative z-10 flex flex-grow flex-col items-center justify-center px-6 pt-20 pb-12 md:flex-row md:px-20 lg:px-28 xl:px-36'>
         {/* Left Column: Text Content */}
-        <div className='md:w-1/2 text-center md:text-left mb-12 md:mb-0 pr-0 md:pr-12 lg:pr-24'>
-          <h1 className='text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6'>
+        <div className='mb-12 pr-0 text-center md:mb-0 md:w-1/2 md:pr-12 md:text-left lg:pr-24'>
+          <h1 className='mb-6 text-4xl leading-tight font-extrabold sm:text-5xl lg:text-6xl'>
             Finally...the{' '}
             <span className='relative inline-block'>
-              Google Ads
-              <span className='absolute bottom-0 left-0 w-full h-1 bg-yellow-400'></span>
+              Ads
+              <span className='absolute bottom-0 left-0 h-1 w-full bg-yellow-400'></span>
             </span>{' '}
             agency you&apos;ve been searching for.
           </h1>
-          <p className='text-base md:text-lg text-gray-300 max-w-xl mx-auto md:mx-0'>
-            Get better results from your Google Ads account in 90 days with a
-            team of PPC specialists 100% focused on making you more money using
-            our proven 90-Day Growth Sprints.
+          <p className='mx-auto max-w-xl text-base text-gray-300 md:mx-0 md:text-lg'>
+            Get better results from your Ads account in 90 days with a team of
+            PPC specialists 100% focused on making you more money using our
+            proven 90-Day Growth Sprints.
           </p>
         </div>
 
         {/* Right Column: Illustration */}
-        <div className='md:w-1/2 flex justify-center md:justify-end relative'>
+        <div className='relative flex justify-center md:w-1/2 md:justify-end'>
           {/* Moon surface */}
           <div
-            className='absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md md:max-w-none md:w-[600px] h-[150px] md:h-[200px] bg-gray-800 rounded-t-full z-0 opacity-80'
+            className='absolute bottom-0 left-1/2 z-0 h-[150px] w-full max-w-md -translate-x-1/2 rounded-t-full bg-gray-800 opacity-80 md:h-[200px] md:w-[600px] md:max-w-none'
             style={{
               backgroundImage:
                 'radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 70%), url("/img/moon-surface.png")', // Placeholder if you have a moon texture
@@ -54,13 +61,13 @@ export default function HeroSection() {
             }}
           >
             {/* Moon craters placeholder (can be improved with SVGs or more divs) */}
-            <div className='absolute top-1/3 left-1/4 w-10 h-10 bg-gray-700 rounded-full opacity-60'></div>
-            <div className='absolute top-1/2 right-1/4 w-16 h-16 bg-gray-700 rounded-full opacity-50'></div>
-            <div className='absolute top-2/3 left-1/2 w-8 h-8 bg-gray-700 rounded-full opacity-70'></div>
+            <div className='absolute top-1/3 left-1/4 h-10 w-10 rounded-full bg-gray-700 opacity-60'></div>
+            <div className='absolute top-1/2 right-1/4 h-16 w-16 rounded-full bg-gray-700 opacity-50'></div>
+            <div className='absolute top-2/3 left-1/2 h-8 w-8 rounded-full bg-gray-700 opacity-70'></div>
           </div>
           {/* Planets (adjust positions and sizes) */}
-          <div className='absolute top-1/4 left-0 w-16 h-16 bg-gray-700 rounded-full opacity-40 blur-sm'></div>
-          <div className='absolute bottom-1/3 right-1/4 w-24 h-24 bg-gray-700 rounded-full opacity-30 blur-sm'></div>
+          <div className='absolute top-1/4 left-0 h-16 w-16 rounded-full bg-gray-700 opacity-40 blur-sm'></div>
+          <div className='absolute right-1/4 bottom-1/3 h-24 w-24 rounded-full bg-gray-700 opacity-30 blur-sm'></div>
 
           {/* Astronaut Image - Ensure you have this SVG/PNG in your public folder */}
           <Image
@@ -69,29 +76,64 @@ export default function HeroSection() {
             width={600} // Adjust based on your SVG dimensions and desired size
             height={600} // Adjust based on your SVG dimensions and desired size
             priority // Load this image early as it's part of the hero
-            className='relative z-10 w-full max-w-md md:max-w-lg lg:max-w-xl h-auto'
+            className='relative z-10 h-auto w-full max-w-md md:max-w-lg lg:max-w-xl'
           />
         </div>
       </div>
 
+      {/* Trusted By Section */}
+      <div className='relative z-10 mb-8 w-full px-6 md:px-20'>
+        <div className='flex flex-col items-center gap-6'>
+          <p className='text-xs font-bold tracking-[0.3em] text-gray-500 uppercase'>
+            Our Supported Platforms
+          </p>
+          <div className='flex flex-wrap items-center justify-center gap-8 opacity-40 grayscale transition-all duration-700 hover:grayscale-0 md:gap-16'>
+            <div className='group flex items-center gap-2'>
+              <SiMeta className='h-8 w-8 text-white transition-colors group-hover:text-[#0668E1] md:h-10 md:w-10' />
+              <span className='hidden text-lg font-bold sm:block md:text-xl'>
+                Meta
+              </span>
+            </div>
+            <div className='group flex items-center gap-2'>
+              <SiGoogleads className='h-8 w-8 text-white transition-colors group-hover:text-[#4285F4] md:h-10 md:w-10' />
+              <span className='hidden text-lg font-bold sm:block md:text-xl'>
+                Google Ads
+              </span>
+            </div>
+            <div className='group flex items-center gap-2'>
+              <SiInstagram className='h-8 w-8 text-white transition-colors group-hover:text-[#E4405F] md:h-10 md:w-10' />
+              <span className='hidden text-lg font-bold sm:block md:text-xl'>
+                Instagram
+              </span>
+            </div>
+            <div className='group flex items-center gap-2'>
+              <SiShopify className='h-8 w-8 text-white transition-colors group-hover:text-[#96BF48] md:h-10 md:w-10' />
+              <span className='hidden text-lg font-bold sm:block md:text-xl'>
+                Shopify
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Yellow Footer CTA */}
-      <div className='bg-yellow-400 w-full py-8 md:py-10 text-black flex flex-col md:flex-row items-center justify-center px-6 md:px-20 space-y-4 md:space-y-0 md:space-x-8 lg:space-x-12 relative z-10'>
-        <p className='text-lg md:text-xl font-semibold text-center md:text-left'>
+      <div className='relative z-10 flex w-full flex-col items-center justify-center space-y-4 bg-yellow-400 px-6 py-8 text-black md:flex-row md:space-y-0 md:space-x-8 md:px-20 md:py-10 lg:space-x-12'>
+        <p className='text-center text-lg font-semibold md:text-left md:text-xl'>
           Get started with a{' '}
           <span className='underline'>FREE 30-Minute Account Analysis!</span>
         </p>
         {/* Arrow (can be an SVG if needed) */}
-        <span className='hidden md:block text-2xl rotate-90 md:rotate-0'>
+        <span className='hidden rotate-90 text-2xl md:block md:rotate-0'>
           →
         </span>{' '}
         {/* Arrow for desktop */}
         <a
           href='#schedule-analysis'
-          className='bg-black text-white px-8 py-4 rounded-lg font-bold text-base md:text-lg shadow-lg hover:bg-gray-800 transition-colors duration-300 flex items-center justify-center'
+          className='flex items-center justify-center rounded-lg bg-black px-8 py-4 text-base font-bold text-white shadow-lg transition-colors duration-300 hover:bg-gray-800 md:text-lg'
         >
           Schedule Your FREE Analysis
           <svg
-            className='ml-2 w-5 h-5 hidden md:block'
+            className='ml-2 hidden h-5 w-5 md:block'
             fill='none'
             stroke='currentColor'
             viewBox='0 0 24 24'

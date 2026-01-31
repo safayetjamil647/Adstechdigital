@@ -13,38 +13,37 @@ const ColumnBlock: React.FC<ColumnBlockProps> = ({
   className = '',
 }) => (
   <div className={`mb-10 md:mb-0 ${className}`}>
-    <h3 className='text-2xl font-bold text-gray-900 mb-4 leading-snug'>
+    <h3 className='mb-4 text-2xl leading-snug font-bold text-gray-900'>
       {title}
     </h3>
-    <div className='text-gray-700 space-y-4'>{children}</div>
+    <div className='space-y-4 text-gray-700'>{children}</div>
   </div>
 );
 
 export default function ValuePropositionSection() {
   return (
     // Light blue/off-white background to match the image
-    <section className='bg-blue-50 py-20 md:py-28 px-6 md:px-20 lg:px-28'>
-      <div className='max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-x-16 gap-y-12'>
+    <section className='bg-blue-50 px-6 py-20 md:px-20 md:py-28 lg:px-28'>
+      <div className='mx-auto grid max-w-7xl grid-cols-1 gap-x-16 gap-y-12 lg:grid-cols-3'>
         {/* Column 1: Question and Primary CTA */}
         <div className='lg:col-span-1'>
-          <h2 className='text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 leading-tight'>
-            Could your Google Ads campaigns drive more profit into your
-            business?
+          <h2 className='mb-6 text-3xl leading-tight font-extrabold text-gray-900 sm:text-4xl'>
+            Could your Ads campaigns drive more profit into your business?
           </h2>
-          <p className='text-base text-gray-700 mb-6'>
-            Grow My Ads uses 90-Day Growth Sprints to profitably accelerate your
-            business and turn your account into a profit-generating machine. Our
-            proven system and hands-on approach deliver results most companies
-            can only dream of.
+          <p className='mb-6 text-base text-gray-700'>
+            Ads Tech Digital uses 90-Day Growth Sprints to profitably accelerate
+            your business and turn your account into a profit-generating
+            machine. Our proven system and hands-on approach deliver results
+            most companies can only dream of.
           </p>
 
-          <div className='flex items-center space-x-3 mb-8'>
-            <p className='text-base text-blue-600 font-semibold'>
+          <div className='mb-8 flex items-center space-x-3'>
+            <p className='text-base font-semibold text-blue-600'>
               Here's how it works:
             </p>
             {/* Animated Arrow */}
             <svg
-              className='w-6 h-6 text-blue-600 transition-transform duration-500 ease-out'
+              className='h-6 w-6 text-blue-600 transition-transform duration-500 ease-out'
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 24 24'
@@ -62,7 +61,7 @@ export default function ValuePropositionSection() {
           {/* Primary CTA Button */}
           <a
             href='#free-analysis'
-            className='inline-block px-8 py-4 bg-yellow-400 text-gray-900 rounded-lg font-bold shadow-lg hover:bg-yellow-500 transition-colors duration-200'
+            className='inline-block rounded-lg bg-yellow-400 px-8 py-4 font-bold text-gray-900 shadow-lg transition-colors duration-200 hover:bg-yellow-500'
             style={{
               boxShadow: '4px 4px 0px 0px rgba(0, 0, 0, 0.75)', // Hard shadow effect from image
             }}
@@ -72,7 +71,7 @@ export default function ValuePropositionSection() {
         </div>
 
         {/* Column 2: Solution-Driven Approach */}
-        <div className='lg:col-span-1 border-t-2 lg:border-t-0 lg:border-l-2 border-gray-300 lg:pl-8 pt-8 lg:pt-0'>
+        <div className='border-t-2 border-gray-300 pt-8 lg:col-span-1 lg:border-t-0 lg:border-l-2 lg:pt-0 lg:pl-8'>
           <ColumnBlock title='Solution-Driven Google Ad Results:'>
             <p>
               Increase conversions and ROI with our 90-Day Growth Sprints
@@ -82,9 +81,9 @@ export default function ValuePropositionSection() {
 
           <ColumnBlock title='Change What You Get to How You Benefit:'>
             <p>
-              Grow My Ads continually tests, expands, and improves your Google
-              Ads performance and ROI in 90-Day Growth Sprints that deliver the
-              best results.
+              Ads Tech Digital continually tests, expands, and improves your
+              Google Ads performance and ROI in 90-Day Growth Sprints that
+              deliver the best results.
             </p>
           </ColumnBlock>
 
@@ -97,7 +96,7 @@ export default function ValuePropositionSection() {
         </div>
 
         {/* Column 3: Proven Track Record */}
-        <div className='lg:col-span-1 border-t-2 lg:border-t-0 lg:border-l-2 border-gray-300 lg:pl-8 pt-8 lg:pt-0'>
+        <div className='border-t-2 border-gray-300 pt-8 lg:col-span-1 lg:border-t-0 lg:border-l-2 lg:pt-0 lg:pl-8'>
           <ColumnBlock title='Proven Track Record:'>
             <p>
               Using our proven framework, Google My Ads helps businesses

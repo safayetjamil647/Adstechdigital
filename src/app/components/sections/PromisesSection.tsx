@@ -21,7 +21,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, reviews }) => {
     .map((_, index) => (
       <svg
         key={index}
-        className='w-5 h-5 fill-current text-yellow-400'
+        className='h-5 w-5 fill-current text-yellow-400'
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 24 24'
       >
@@ -31,11 +31,11 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, reviews }) => {
     ));
 
   return (
-    <div className='flex flex-col items-center mb-16'>
-      <div className='flex space-x-0.5 mb-2'>{stars}</div>
-      <p className='text-gray-700 text-sm font-medium'>
-        GrowMyAds has a {rating}/{fullStars} average rating from {reviews}{' '}
-        reviews on Clutch.co
+    <div className='mb-16 flex flex-col items-center'>
+      <div className='mb-2 flex space-x-0.5'>{stars}</div>
+      <p className='text-sm font-medium text-gray-700'>
+        Ads Tech Digital has a {rating}/{fullStars} average rating from{' '}
+        {reviews} reviews on Clutch.co
       </p>
     </div>
   );
@@ -46,7 +46,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, reviews }) => {
 // 1. Strategy Assessment Icon (Diamond/Sparkle)
 const StrategyIcon = () => (
   <svg
-    className='w-16 h-16 mx-auto text-yellow-500'
+    className='mx-auto h-16 w-16 text-yellow-500'
     viewBox='0 0 100 100'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
@@ -99,7 +99,7 @@ const StrategyIcon = () => (
 // 2. Dedicated Account Manager Icon (Badge/Shield)
 const ManagerIcon = () => (
   <svg
-    className='w-16 h-16 mx-auto text-yellow-500'
+    className='mx-auto h-16 w-16 text-yellow-500'
     viewBox='0 0 100 100'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
@@ -133,7 +133,7 @@ const ManagerIcon = () => (
       height='8'
       rx='2'
       fill='#FCD34D'
-      className='transform rotate-45'
+      className='rotate-45 transform'
     />
   </svg>
 );
@@ -141,7 +141,7 @@ const ManagerIcon = () => (
 // 3. Exclusive Focus Icon (Location Pin)
 const FocusIcon = () => (
   <svg
-    className='w-16 h-16 mx-auto text-yellow-500'
+    className='mx-auto h-16 w-16 text-yellow-500'
     viewBox='0 0 100 100'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
@@ -180,42 +180,42 @@ const PromiseFeature: React.FC<PromiseFeatureProps> = ({
   title,
   description,
 }) => (
-  <div className='flex flex-col items-center p-4 text-center max-w-xs mx-auto'>
+  <div className='mx-auto flex max-w-xs flex-col items-center p-4 text-center'>
     <div className='mb-4'>
       <Icon />
     </div>
-    <h3 className='text-lg font-bold text-gray-900 mb-2'>{title}</h3>
-    <p className='text-sm text-gray-600 font-normal'>{description}</p>
+    <h3 className='mb-2 text-lg font-bold text-gray-900'>{title}</h3>
+    <p className='text-sm font-normal text-gray-600'>{description}</p>
   </div>
 );
 
 export default function PromisesSection() {
   return (
-    <section className='py-24 md:py-32 bg-white flex flex-col items-center px-6 md:px-20'>
+    <section className='flex flex-col items-center bg-white px-6 py-24 md:px-20 md:py-32'>
       {/* Social Proof (Star Rating) */}
       <StarRating rating='5' reviews={85} />
 
       {/* Headline */}
-      <h2 className='text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-12 max-w-4xl leading-tight text-center'>
+      <h2 className='mb-12 max-w-4xl text-center text-3xl leading-tight font-extrabold text-gray-900 sm:text-4xl lg:text-5xl'>
         Gone are the days of signing a{' '}
         <span className='relative inline-block'>
           long contract
-          <span className='absolute bottom-0 left-0 w-full h-1 bg-yellow-400'></span>
+          <span className='absolute bottom-0 left-0 h-1 w-full bg-yellow-400'></span>
         </span>{' '}
         with a Google Ads agency or freelancer and hoping they’ll deliver
         results.
       </h2>
 
       {/* Promises Introduction */}
-      <div className='flex flex-col items-center mb-12'>
-        <p className='text-xl font-bold text-gray-900 mb-1'>
-          Grow My Ads promises:
+      <div className='mb-12 flex flex-col items-center'>
+        <p className='mb-1 text-xl font-bold text-gray-900'>
+          Ads Tech Digital promises:
         </p>
-        <div className='w-24 h-1 bg-teal-400 rounded-full'></div>
+        <div className='h-1 w-24 rounded-full bg-teal-400'></div>
       </div>
 
       {/* Features Grid */}
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-16 w-full max-w-6xl'>
+      <div className='grid w-full max-w-6xl grid-cols-1 gap-10 md:grid-cols-3 md:gap-8 lg:gap-16'>
         <PromiseFeature
           Icon={StrategyIcon}
           title='A Strategy Assessment Every 90 Days'

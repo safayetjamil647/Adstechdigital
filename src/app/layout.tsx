@@ -47,12 +47,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className='bg-gray-50 text-gray-900 min-h-screen flex flex-col'>
+      <body className='flex min-h-screen flex-col bg-gray-50 text-gray-900'>
         {/* Navbar fixed at top */}
         <Navbar />
 
         {/* Full-width, full-height content below */}
-        <main className='flex-1 w-full'>{children}</main>
+        <main className='w-full flex-1'>{children}</main>
         <Analytics />
       </body>
     </html>

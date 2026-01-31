@@ -1,9 +1,9 @@
 export default function PricingSection() {
   return (
-    <section id='pricing' className='py-20 bg-gray-50'>
-      <div className='max-w-5xl mx-auto px-6 text-center'>
-        <h2 className='text-3xl font-bold mb-12 text-gray-800'>Pricing</h2>
-        <div className='grid md:grid-cols-3 gap-8'>
+    <section id='pricing' className='bg-gray-50 py-20'>
+      <div className='mx-auto max-w-5xl px-6 text-center'>
+        <h2 className='mb-12 text-3xl font-bold text-gray-800'>Pricing</h2>
+        <div className='grid gap-8 md:grid-cols-3'>
           {[
             {
               name: 'Starter',
@@ -21,11 +21,11 @@ export default function PricingSection() {
               features: ['Unlimited users', 'Dedicated support'],
             },
           ].map((plan) => (
-            <div key={plan.name} className='p-6 bg-white rounded-xl shadow'>
-              <h3 className='text-xl font-semibold mb-4 text-blue-600'>
+            <div key={plan.name} className='rounded-xl bg-white p-6 shadow'>
+              <h3 className='mb-4 text-xl font-semibold text-blue-600'>
                 {plan.name}
               </h3>
-              <p className='text-3xl font-bold mb-6'>{plan.price}</p>
+              <p className='mb-6 text-3xl font-bold'>{plan.price}</p>
               <ul className='space-y-2 text-gray-600'>
                 {plan.features.map((f) => (
                   <li key={f}>• {f}</li>

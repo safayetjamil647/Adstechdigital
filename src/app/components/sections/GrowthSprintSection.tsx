@@ -18,9 +18,9 @@ interface CheckListItemProps {
 }
 
 const CheckListItem: React.FC<CheckListItemProps> = ({ children }) => (
-  <div className='flex items-start space-x-3 text-lg text-gray-800 font-medium'>
+  <div className='flex items-start space-x-3 text-lg font-medium text-gray-800'>
     <svg
-      className='flex-shrink-0 w-6 h-6 text-black mt-0.5'
+      className='mt-0.5 h-6 w-6 flex-shrink-0 text-black'
       fill='none'
       stroke='currentColor'
       viewBox='0 0 24 24'
@@ -45,15 +45,15 @@ export default function GrowthSprintsSection() {
 
   return (
     // Light gray/yellowish background (bg-gray-50 or bg-amber-50 for subtle tint)
-    <section className='bg-gray-50 py-20 md:py-28 px-6 md:px-20 lg:px-28 text-center'>
-      <div className='max-w-4xl mx-auto'>
+    <section className='bg-gray-50 px-6 py-20 text-center md:px-20 md:py-28 lg:px-28'>
+      <div className='mx-auto max-w-4xl'>
         {/* Headline */}
-        <h2 className='text-3xl sm:text-4xl font-extrabold text-gray-900 mb-12'>
+        <h2 className='mb-12 text-3xl font-extrabold text-gray-900 sm:text-4xl'>
           Our 90-Day Growth Sprints typically include:
         </h2>
 
         {/* Checkmark List Container (Two Columns) */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12 mb-16 text-left max-w-2xl mx-auto'>
+        <div className='mx-auto mb-16 grid max-w-2xl grid-cols-1 gap-x-12 gap-y-6 text-left sm:grid-cols-2'>
           {/* Left Column */}
           <div className='space-y-6'>
             {leftColumn.map((item, index) => (
@@ -70,7 +70,7 @@ export default function GrowthSprintsSection() {
         </div>
 
         {/* Bottom Line / Conclusion */}
-        <p className='text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto font-medium'>
+        <p className='mx-auto mb-10 max-w-3xl text-lg font-medium text-gray-700 md:text-xl'>
           The bottom line? We're committed to helping you understand exactly how
           much money you're making for every dollar you invest in ad spend...and
           we love seeing your reaction as that number grows again and again!
@@ -79,7 +79,7 @@ export default function GrowthSprintsSection() {
         {/* CTA Button */}
         <a
           href='#free-analysis'
-          className='inline-block px-10 py-5 bg-yellow-400 text-gray-900 rounded-lg text-xl font-bold hover:bg-yellow-500 transition-colors duration-200'
+          className='inline-block rounded-lg bg-yellow-400 px-10 py-5 text-xl font-bold text-gray-900 transition-colors duration-200 hover:bg-yellow-500'
           style={{
             boxShadow: '4px 4px 0px 0px rgba(0, 0, 0, 0.75)', // Hard shadow effect from image
           }}

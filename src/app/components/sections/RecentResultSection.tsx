@@ -66,20 +66,20 @@ const resultsData = [
 
 export default function RecentResults() {
   return (
-    <section className='py-16 bg-blue-50 px-6 md:px-20'>
-      <div className='mb-8 relative'>
-        <p className='text-gray-500 italic absolute -top-6 left-0 transform -rotate-12'>
+    <section className='bg-blue-50 px-6 py-16 md:px-20'>
+      <div className='relative mb-8'>
+        <p className='absolute -top-6 left-0 -rotate-12 transform text-gray-500 italic'>
           some recent results
         </p>
       </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6'>
+      <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-5'>
         {resultsData.map((item, idx) => (
           <div
             key={idx}
-            className='bg-white p-4 rounded-lg shadow hover:shadow-md transition flex flex-col items-center text-center'
+            className='flex flex-col items-center rounded-lg bg-white p-4 text-center shadow transition hover:shadow-md'
           >
-            <div className='w-24 h-24 mb-3 relative'>
+            <div className='relative mb-3 h-24 w-24'>
               <Image
                 src={item.logo}
                 alt={item.name}
@@ -87,8 +87,8 @@ export default function RecentResults() {
                 style={{ objectFit: 'contain' }}
               />
             </div>
-            <p className='text-green-500 font-semibold mb-1'>↑ {item.metric}</p>
-            <p className='text-gray-700 text-sm'>{item.description}</p>
+            <p className='mb-1 font-semibold text-green-500'>↑ {item.metric}</p>
+            <p className='text-sm text-gray-700'>{item.description}</p>
           </div>
         ))}
       </div>
