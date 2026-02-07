@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.title}`,
   },
   description: siteConfig.description,
+  authors: [{ name: 'Ads Tech Digital', url: 'https://adstechdigital.com' }],
   robots: { index: true, follow: true },
   icons: {
     icon: '/favicon/favicon.ico',

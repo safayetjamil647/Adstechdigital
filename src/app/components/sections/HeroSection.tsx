@@ -72,7 +72,7 @@ export default function HeroSection() {
           {/* Astronaut Image - Ensure you have this SVG/PNG in your public folder */}
           <Image
             src='/svg/hero.svg' // Placeholder for your astronaut image
-            alt='Astronaut playing guitar in space'
+            alt='Ads Tech Digital Agency Astronaut Hero Illustration'
             width={600} // Adjust based on your SVG dimensions and desired size
             height={600} // Adjust based on your SVG dimensions and desired size
             priority // Load this image early as it's part of the hero
@@ -128,7 +128,7 @@ export default function HeroSection() {
         </span>{' '}
         {/* Arrow for desktop */}
         <a
-          href='#schedule-analysis'
+          href='https://calendly.com/adstechdigitalinfo/30min'
           className='flex items-center justify-center rounded-lg bg-black px-8 py-4 text-base font-bold text-white shadow-lg transition-colors duration-300 hover:bg-gray-800 md:text-lg'
         >
           Schedule Your FREE Analysis

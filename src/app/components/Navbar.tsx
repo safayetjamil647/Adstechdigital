@@ -3,9 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
-import { Menu, X } from 'lucide-react';
-
-import { siteConfig } from '@/constant/config';
 
 const links = [
   { name: 'Home', href: '/' },
@@ -20,109 +17,104 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <nav className='dark:bg-dark/70 sticky top-0 z-50 w-full border-b border-white/20 bg-white/70 backdrop-blur-md transition-all duration-300'>
-      <div className='mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 md:h-16 lg:px-8'>
-        <Link href='/' className='group flex items-center gap-2'>
-          <div className='relative flex items-center justify-center'>
-            {/* Animated Glow Effect */}
-            <div className='bg-primary-500/20 absolute inset-0 rounded-full opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100'></div>
-
-            <div className='from-primary-600 to-primary-400 group-hover:shadow-primary-500/20 relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-tr shadow-lg transition-all duration-300 group-hover:-translate-y-0.5'>
-              {/* Shine Animation */}
-              <div className='absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-[2000ms] ease-in-out group-hover:translate-x-full'></div>
-
-              <svg
-                viewBox='0 0 24 24'
-                fill='none'
-                className='h-6 w-6 text-white drop-shadow-md'
-                xmlns='http://www.w3.org/2000/svg'
-              >
-                <path
-                  d='M13 2L3 14H12V22L22 10H13V2Z'
-                  fill='currentColor'
-                  stroke='currentColor'
-                  strokeWidth='1.5'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                />
-              </svg>
-            </div>
-          </div>
-
-          <div className='flex flex-col -space-y-1.5'>
-            <span className='via-primary-600 dark:via-primary-400 animate-shimmer bg-gradient-to-r from-gray-900 to-gray-700 bg-[length:200%_auto] bg-clip-text text-xl font-black tracking-tight text-transparent md:text-2xl dark:from-white dark:to-gray-300'>
-              Ads Tech
-            </span>
-            <span className='group-hover:text-primary-600 dark:group-hover:text-primary-400 ml-0.5 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase opacity-80 transition-colors duration-300 md:text-xs dark:text-gray-400'>
-              Digital Agency
+    <nav className='sticky top-0 z-50 flex w-full justify-center border-b border-white/10 bg-black/80 backdrop-blur-md'>
+      <div className='flex w-full max-w-7xl items-center justify-between px-6 py-4 text-sm text-white'>
+        {/* Logo */}
+        <Link href='/' className='flex items-center shrink-0'>
+          <div className='flex items-center gap-1.5'>
+            <span className='text-xl font-black uppercase tracking-tighter'>
+              Ads<span className='text-primary-400'>Tech</span>
             </span>
           </div>
         </Link>
 
         {/* Desktop Menu */}
-        <div className='hidden items-center gap-1 md:flex lg:gap-4'>
+        <div className='ml-7 hidden items-center gap-6 md:flex'>
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 ${
-                pathname === link.href
-                  ? 'text-primary-600 bg-primary-50/50 dark:bg-primary-900/20'
-                  : 'text-gray-600 hover:bg-gray-100/50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/50 dark:hover:text-white'
-              }`}
+              className={`group relative h-6 overflow-hidden transition-colors ${pathname === link.href ? 'text-primary-400' : 'text-white'
+                }`}
             >
-              {link.name}
+              <span className='block transition-transform duration-300 group-hover:-translate-y-full'>
+                {link.name}
+              </span>
+              <span className='absolute top-full left-0 block transition-transform duration-300 group-hover:-translate-y-full'>
+                {link.name}
+              </span>
             </Link>
           ))}
+        </div>
+
+        {/* Desktop Actions */}
+        <div className='ml-14 hidden items-center gap-4 md:flex shrink-0'>
           <Link
             href='/contact'
-            className='bg-primary-600 hover:bg-primary-700 hover:shadow-primary-600/30 ml-4 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-lg active:scale-95'
+            className='rounded-full border border-slate-600 px-4 py-2 text-sm font-medium transition hover:bg-slate-800'
           >
-            Contact Us
+            Contact
+          </Link>
+          <Link
+            href='https://calendly.com/adstechdigitalinfo/30min'
+            className='shadow-white/50 hover:shadow-white/50 rounded-full bg-white px-4 py-2 text-sm font-medium text-black shadow-[0px_0px_30px_7px] transition duration-300 hover:bg-slate-100 hover:shadow-[0px_0px_30px_14px]'
+          >
+            Get Started
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className='flex items-center md:hidden'>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className='rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white'
+        {/* Mobile Menu Toggle */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className='text-gray-400 md:hidden p-2'
+        >
+          <svg
+            className='h-6 w-6'
+            fill='none'
+            stroke='currentColor'
+            strokeWidth='2'
+            viewBox='0 0 24 24'
+            strokeLinecap='round'
+            strokeLinejoin='round'
           >
-            {isOpen ? <X className='h-6 w-6' /> : <Menu className='h-6 w-6' />}
-          </button>
-        </div>
-      </div>
+            {isOpen ? (
+              <path d='M6 18L18 6M6 6l12 12' />
+            ) : (
+              <path d='M4 6h16M4 12h16M4 18h16' />
+            )}
+          </svg>
+        </button>
 
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`dark:bg-dark absolute top-14 left-0 w-full border-b border-gray-100 bg-white transition-all duration-300 ease-in-out md:hidden dark:border-gray-800 ${
-          isOpen
-            ? 'translate-y-0 opacity-100'
-            : 'pointer-events-none -translate-y-4 opacity-0'
-        }`}
-      >
-        <div className='space-y-1 bg-white/90 px-4 pt-2 pb-6 backdrop-blur-xl'>
+        {/* Mobile Menu */}
+        <div
+          className={`absolute top-full left-0 w-full flex-col items-center gap-4 border-b border-white/10 bg-black/95 py-6 backdrop-blur-xl md:hidden ${isOpen ? 'flex' : 'hidden'
+            }`}
+        >
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className={`block rounded-lg px-3 py-3 text-base font-medium transition-colors ${
-                pathname === link.href
-                  ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/20'
-                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'
-              }`}
+              className={`text-base transition-colors hover:text-primary-400 ${pathname === link.href ? 'text-primary-400' : 'text-white'
+                }`}
             >
               {link.name}
             </Link>
           ))}
-          <div className='px-3 pt-4'>
+          <div className='flex flex-col gap-4 pt-4 w-full px-6'>
             <Link
               href='/contact'
               onClick={() => setIsOpen(false)}
-              className='bg-primary-600 hover:bg-primary-700 block w-full rounded-full py-3 text-center font-semibold text-white transition-colors'
+              className='rounded-full border border-slate-600 py-2 text-center text-sm font-medium transition hover:bg-slate-800'
             >
-              Contact Us
+              Contact
+            </Link>
+            <Link
+              href='https://calendly.com/adstechdigitalinfo/30min'
+              onClick={() => setIsOpen(false)}
+              className='shadow-white/50 rounded-full bg-white py-2 text-center text-sm font-medium text-black shadow-[0px_0px_20px_4px] transition duration-300 hover:bg-slate-100'
+            >
+              Get Started
             </Link>
           </div>
         </div>
